@@ -1,0 +1,70 @@
+.piano-keyboard {
+  position: relative;
+  max-width: 100%;
+}
+
+.piano-key {
+  position: absolute;
+  top: 0;
+  border: 1px solid #2b2b2b;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 16px;
+  transition: transform 0.08s ease, background 0.15s ease, box-shadow 0.15s ease;
+}
+
+.piano-key--white {
+  background: #ffffff;
+  color: #333;
+  z-index: 1;
+  border-radius: 0 0 6px 6px;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.15);
+}
+
+.piano-key--white:active {
+  background: #e5e5e5;
+  transform: translateY(2px);
+}
+
+.piano-key--black {
+  background: #222;
+  z-index: 2;
+  border-radius: 0 0 4px 4px;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.35);
+}
+
+.piano-key--black:active {
+  background: #444;
+  transform: translateY(2px);
+}
+
+.piano-key--next.piano-key--white {
+  background: #ffe9a8;
+  box-shadow: 0 0 0 3px #ffb703 inset;
+  animation: key-pulse 1s ease-in-out infinite;
+}
+
+.piano-key--next.piano-key--black {
+  background: #b8860b;
+  animation: key-pulse 1s ease-in-out infinite;
+}
+
+.piano-key__label {
+  font-size: 18px;
+  font-weight: 700;
+  user-select: none;
+  pointer-events: none;
+}
+
+@keyframes key-pulse {
+  0%,
+  100% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(1.15);
+  }
+}

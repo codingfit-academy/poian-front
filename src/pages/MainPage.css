@@ -1,0 +1,85 @@
+.main-body {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding: 24px 40px 56px;
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.left-panel,
+.right-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.left-panel {
+  flex: 1 1 380px;
+}
+
+.right-panel {
+  flex: 2 1 700px;
+}
+
+.stage-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(140px, 1fr));
+  gap: 18px;
+  width: 100%;
+  max-width: 380px;
+}
+
+.stage-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 22px 12px;
+  border-radius: 20px;
+  background: #ffffff;
+  color: #1d3557;
+  text-decoration: none;
+  box-shadow: 0 8px 18px rgba(29, 53, 87, 0.2);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.stage-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 22px rgba(29, 53, 87, 0.28);
+}
+
+.stage-button__number {
+  font-size: 30px;
+  font-weight: 800;
+}
+
+.stage-button__title {
+  font-size: 13px;
+  font-weight: 600;
+  text-align: center;
+  opacity: 0.8;
+}
+
+.piano-title {
+  color: #1d3557;
+  font-size: 26px;
+  font-weight: 800;
+}
+
+.piano-scroll {
+  width: 100%;
+  max-width: 720px;
+  overflow-x: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 4px;
+}

@@ -1,0 +1,55 @@
+.sheet-music {
+  width: 100%;
+  max-width: 100%;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 12px 8px;
+  box-shadow: 0 8px 20px rgba(29, 53, 87, 0.18);
+}
+
+.sheet-music__svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.staff-line {
+  stroke: #1d3557;
+  stroke-width: 2;
+}
+
+.bar-line {
+  stroke: #1d3557;
+  stroke-width: 2;
+}
+
+.bar-line--end {
+  stroke-width: 4;
+}
+
+.clef {
+  font-size: 96px;
+  fill: #1d3557;
+  font-family: serif;
+}
+
+.ledger-line {
+  stroke: #1d3557;
+  stroke-width: 2;
+}
+
+.note-head {
+  fill: #e63946;
+}
+
+.note-stem {
+  stroke: #e63946;
+  stroke-width: 2.5;
+}
+
+.note-syllable {
+  font-size: 15px;
+  font-weight: 700;
+  fill: #1d3557;
+  text-anchor: middle;
+}

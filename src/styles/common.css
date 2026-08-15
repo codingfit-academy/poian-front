@@ -1,0 +1,85 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(180deg, #7fb8e6 0%, #bfe1f7 60%, #d8f0fb 100%);
+}
+
+.page-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 12px;
+  padding: 24px 40px 8px;
+}
+
+.page-header h1 {
+  color: #1d3557;
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.badge {
+  background: rgba(255, 255, 255, 0.7);
+  color: #1d3557;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 6px 14px;
+  border-radius: 999px;
+}
+
+.big-button {
+  padding: 18px 40px;
+  font-size: 20px;
+  font-weight: 700;
+  border: none;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #1d3557;
+  box-shadow: 0 8px 18px rgba(29, 53, 87, 0.25);
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.big-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(29, 53, 87, 0.3);
+}
+
+.big-button:active {
+  transform: translateY(0);
+}
+
+.big-button--accent {
+  background: #ffb703;
+  color: #3a2a00;
+}
+
+.ghost-button {
+  padding: 14px 28px;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 999px;
+  border: 2px solid #1d3557;
+  background: transparent;
+  color: #1d3557;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.status-text {
+  font-size: 16px;
+  color: #1d3557;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.6);
+  padding: 8px 18px;
+  border-radius: 12px;
+}
+
+.error-text {
+  color: #d62828;
+  font-weight: 600;
+  max-width: 280px;
+  text-align: center;
+}

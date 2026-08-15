@@ -1,0 +1,33 @@
+.star-rating {
+  display: flex;
+  gap: 6px;
+}
+
+.star {
+  font-size: 40px;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.35);
+  transform: scale(0.6);
+  opacity: 0;
+  animation: star-pop 0.35s ease forwards;
+}
+
+.star--filled {
+  color: #ffd60a;
+  text-shadow: 0 0 10px rgba(255, 214, 10, 0.7);
+}
+
+@keyframes star-pop {
+  from {
+    transform: scale(0.4);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

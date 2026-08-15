@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'OngleipKonkon';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2412-1@1.0/Ownglyph_corncorn-Rg.woff2') format('woff2');
+  font-weight: normal;
+  font-display: swap;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -5,7 +12,7 @@
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  background: #f5f5f5;
+  font-family: 'OngleipKonkon', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #bfe1f7;
   color: #333;
 }
