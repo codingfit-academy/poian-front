@@ -1,16 +1,17 @@
+// koreanLabel: 전통 음이름 (다라마바사가나다)
 export const WHITE_KEYS = [
-  { note: 'C4', freq: 261.63, label: '도' },
-  { note: 'D4', freq: 293.66, label: '레' },
-  { note: 'E4', freq: 329.63, label: '미' },
-  { note: 'F4', freq: 349.23, label: '파' },
-  { note: 'G4', freq: 392.0, label: '솔' },
-  { note: 'A4', freq: 440.0, label: '라' },
-  { note: 'B4', freq: 493.88, label: '시' },
-  { note: 'C5', freq: 523.25, label: '도' },
-  { note: 'D5', freq: 587.33, label: '레' },
-  { note: 'E5', freq: 659.25, label: '미' },
-  { note: 'F5', freq: 698.46, label: '파' },
-  { note: 'G5', freq: 783.99, label: '솔' },
+  { note: 'C4', freq: 261.63, label: '도', koreanLabel: '다' },
+  { note: 'D4', freq: 293.66, label: '레', koreanLabel: '라' },
+  { note: 'E4', freq: 329.63, label: '미', koreanLabel: '마' },
+  { note: 'F4', freq: 349.23, label: '파', koreanLabel: '바' },
+  { note: 'G4', freq: 392.0, label: '솔', koreanLabel: '사' },
+  { note: 'A4', freq: 440.0, label: '라', koreanLabel: '가' },
+  { note: 'B4', freq: 493.88, label: '시', koreanLabel: '나' },
+  { note: 'C5', freq: 523.25, label: '도', koreanLabel: '다' },
+  { note: 'D5', freq: 587.33, label: '레', koreanLabel: '라' },
+  { note: 'E5', freq: 659.25, label: '미', koreanLabel: '마' },
+  { note: 'F5', freq: 698.46, label: '파', koreanLabel: '바' },
+  { note: 'G5', freq: 783.99, label: '솔', koreanLabel: '사' },
 ]
 
 // afterIndex: WHITE_KEYS 중 이 인덱스와 다음 인덱스 사이에 놓이는 검은 건반

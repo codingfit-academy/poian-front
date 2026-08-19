@@ -29,10 +29,17 @@
 }
 
 .mission-card__placeholder {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 700;
   color: #1d3557;
-  line-height: 1.5;
+  line-height: 1.6;
+}
+
+.mission-card__soon {
+  font-size: 14px;
+  font-weight: 600;
+  color: #457b9d;
+  opacity: 0.75;
 }
 
 .camera-corner {
