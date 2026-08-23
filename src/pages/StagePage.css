@@ -1,3 +1,7 @@
+.stage-page__next {
+  margin-left: auto;
+}
+
 .stage-body {
   flex: 1;
   display: flex;

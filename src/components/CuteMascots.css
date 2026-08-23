@@ -1,0 +1,73 @@
+.cute-mascots {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.cute-mascot {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 3px rgba(255, 255, 255, 0.9),
+    0 6px 12px rgba(29, 53, 87, 0.2);
+  font-size: 16px;
+  transition: left 4.2s ease-in-out, top 4.2s ease-in-out;
+  animation: cute-mascot-bob 3.4s ease-in-out infinite;
+}
+
+.cute-mascot--pink {
+  background: linear-gradient(160deg, #ffe1ec 0%, #ffc9dd 100%);
+}
+
+.cute-mascot--butter {
+  background: linear-gradient(160deg, #fff6d6 0%, #ffecab 100%);
+}
+
+.cute-mascot--lavender {
+  background: linear-gradient(160deg, #efe3ff 0%, #dcc6ff 100%);
+}
+
+.cute-mascot--sky {
+  background: linear-gradient(160deg, #e2f2ff 0%, #c7e6ff 100%);
+}
+
+.cute-mascot--mint {
+  background: linear-gradient(160deg, #ddfaee 0%, #bdf0d9 100%);
+}
+
+.cute-mascot__ribbon {
+  position: absolute;
+  top: -8px;
+  right: -4px;
+  font-size: 10px;
+  transform: rotate(18deg);
+}
+
+.cute-mascot__face {
+  display: inline-block;
+  transition: transform 0.3s ease-in-out;
+}
+
+@keyframes cute-mascot-bob {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-4deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(4deg);
+  }
+}
+
+@media (max-width: 720px) {
+  .cute-mascot {
+    width: 26px;
+    height: 26px;
+    font-size: 13px;
+  }
+}

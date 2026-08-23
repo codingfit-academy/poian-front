@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { useCamera } from '../hooks/useCamera'
+import CuteMascots from '../components/CuteMascots'
 import { STAGES } from '../constants/stages'
 import Stage1Mission from './stages/Stage1Mission'
 import Stage2Mission from './stages/Stage2Mission'
@@ -32,6 +33,7 @@ function StagePage() {
   const { videoRef, start, error } = useCamera()
   const stageInfo = STAGES.find((s) => String(s.id) === stageId)
   const MissionComponent = STAGE_MISSIONS[Number(stageId)]
+  const nextStage = STAGES.find((s) => s.id === Number(stageId) + 1)
 
   useEffect(() => {
     start()
@@ -39,12 +41,18 @@ function StagePage() {
 
   return (
     <div className="page">
+      <CuteMascots />
       <header className="page-header">
         <Link to="/" className="ghost-button">
-          ← 스테이지 선택
+          ← 단계 선택
         </Link>
-        <h1>스테이지 {stageId}</h1>
+        <h1>{stageId}단계</h1>
         <span className="badge">{stageInfo?.title ?? '미션 준비 중'}</span>
+        {nextStage && (
+          <Link to={`/stage/${nextStage.id}`} className="ghost-button stage-page__next">
+            다음 단계 →
+          </Link>
+        )}
       </header>
 
       <div className="stage-body">
@@ -54,7 +62,7 @@ function StagePage() {
           <div className="mission-card">
             <p className="mission-card__label">미션</p>
             <p className="mission-card__placeholder">{stageInfo?.description ?? '준비 중입니다.'}</p>
-            <p className="mission-card__soon">이 스테이지는 곧 만들어질 예정이에요</p>
+            <p className="mission-card__soon">이 단계는 곧 만들어질 예정이에요</p>
           </div>
         )}
       </div>

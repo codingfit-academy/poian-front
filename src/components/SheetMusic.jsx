@@ -30,10 +30,16 @@ const SYSTEM_HEIGHT = 230
 const BOTTOM_Y = 150
 
 // 이 컴포넌트는 미션(성공/실패 판정)과는 무관한 읽기 연습용 장식 악보입니다.
-function generateRandomSheet() {
-  return Array.from({ length: LINE_COUNT }, () =>
-    Array.from({ length: NOTES_PER_LINE }, () => WHITE_KEYS[Math.floor(Math.random() * WHITE_KEYS.length)]),
-  )
+// '떴다 떴다 비행기'(원곡: Mary Had a Little Lamb) 앞부분 멜로디
+const FLYING_PLANE_MELODY = [
+  'E4', 'D4', 'C4', 'D4', 'E4', 'E4', 'E4', 'D4',
+  'D4', 'D4', 'E4', 'G4', 'G4', 'E4', 'D4', 'C4',
+]
+
+function buildFixedSheet(noteNames) {
+  const keyByNote = Object.fromEntries(WHITE_KEYS.map((key) => [key.note, key]))
+  const keys = noteNames.map((note) => keyByNote[note])
+  return Array.from({ length: LINE_COUNT }, (_, i) => keys.slice(i * NOTES_PER_LINE, (i + 1) * NOTES_PER_LINE))
 }
 
 function StaffSystem({ notes }) {
@@ -95,7 +101,7 @@ function StaffSystem({ notes }) {
 }
 
 function SheetMusic() {
-  const sheet = useMemo(() => generateRandomSheet(), [])
+  const sheet = useMemo(() => buildFixedSheet(FLYING_PLANE_MELODY), [])
 
   return (
     <div className="sheet-music">
@@ -103,7 +109,7 @@ function SheetMusic() {
         className="sheet-music__svg"
         viewBox={`0 0 ${STAFF_WIDTH} ${SYSTEM_HEIGHT * LINE_COUNT}`}
         role="img"
-        aria-label="랜덤으로 생성된 도레미 읽기 연습 악보"
+        aria-label="떴다 떴다 비행기 악보"
       >
         {sheet.map((notes, i) => (
           <g key={i} transform={`translate(0, ${i * SYSTEM_HEIGHT})`}>
