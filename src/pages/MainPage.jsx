@@ -19,19 +19,10 @@ function MainPage() {
       </header>
 
       <div className="main-body">
-        <section className="left-panel">
-          <div className="stage-grid">
-            {STAGES.map((stage) => (
-              <Link key={stage.id} to={`/stage/${stage.id}`} className="stage-button">
-                <span className="stage-button__number">{stage.id}단계</span>
-                <span className="stage-button__title">{stage.title}</span>
-              </Link>
-            ))}
-          </div>
-
-          <div className="advanced-section">
-            <h3 className="advanced-section__title">응용</h3>
-            <div className="stage-grid stage-grid--advanced">
+        <div className="stage-columns">
+          <section className="stage-column stage-column--applied">
+            <h2 className="stage-column__title">응용</h2>
+            <div className="stage-grid">
               {ADVANCED_STAGES.map((stage) => (
                 <Link key={stage.id} to={`/advanced/${stage.id}`} className="stage-button stage-button--advanced">
                   <span className="stage-button__number">{stage.id}단계</span>
@@ -39,10 +30,30 @@ function MainPage() {
                 </Link>
               ))}
             </div>
-          </div>
-        </section>
+          </section>
 
-        <section className="right-panel">
+          <section className="stage-column stage-column--mastery">
+            <h2 className="stage-column__title">심화</h2>
+            <div className="stage-placeholder">
+              <p>심화 단계는 곧 준비할게요!</p>
+              <p>조금만 기다려주세요 🌟</p>
+            </div>
+          </section>
+
+          <section className="stage-column stage-column--basic">
+            <h2 className="stage-column__title">기초</h2>
+            <div className="stage-grid">
+              {STAGES.map((stage) => (
+                <Link key={stage.id} to={`/stage/${stage.id}`} className="stage-button">
+                  <span className="stage-button__number">{stage.id}단계</span>
+                  <span className="stage-button__title">{stage.title}</span>
+                </Link>
+              ))}
+            </div>
+          </section>
+        </div>
+
+        <section className="piano-panel">
           <h2 className="piano-title">떴다 떴다 비행기</h2>
           <div className="piano-scroll">
             <div className="glass-panel">

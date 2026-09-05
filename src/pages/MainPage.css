@@ -9,10 +9,9 @@
   z-index: 1;
   flex: 1;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 40px;
+  gap: 44px;
   padding: 24px 40px 56px;
   max-width: 1440px;
   margin: 0 auto;
@@ -24,28 +23,69 @@
   z-index: 1;
 }
 
-.left-panel,
-.right-panel {
+.stage-columns {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: center;
+  gap: 24px;
+  width: 100%;
+}
+
+.stage-column {
+  flex: 1 1 320px;
+  max-width: 380px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 16px;
+  padding: 22px;
+  border-radius: 26px;
+  background: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 10px 26px rgba(29, 53, 87, 0.18);
 }
 
-.left-panel {
-  flex: 1 1 380px;
+.stage-column__title {
+  color: #1d3557;
+  font-size: 20px;
+  font-weight: 800;
 }
 
-.right-panel {
-  flex: 2 1 700px;
+.stage-column--applied {
+  border-top: 6px solid #9b7bd8;
+}
+
+.stage-column--mastery {
+  border-top: 6px solid #ffb703;
+}
+
+.stage-column--basic {
+  border-top: 6px solid #457b9d;
+}
+
+.stage-placeholder {
+  flex: 1;
+  width: 100%;
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 24px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.55);
+  border: 2px dashed rgba(29, 53, 87, 0.25);
+  color: #457b9d;
+  font-weight: 700;
+  text-align: center;
 }
 
 .stage-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(140px, 1fr));
-  gap: 18px;
+  grid-template-columns: repeat(2, minmax(120px, 1fr));
+  gap: 14px;
   width: 100%;
-  max-width: 380px;
 }
 
 .stage-button {
@@ -80,27 +120,16 @@
   opacity: 0.8;
 }
 
-.advanced-section {
-  width: 100%;
-  max-width: 380px;
-  margin-top: 22px;
-  padding-top: 18px;
-  border-top: 2px dashed rgba(29, 53, 87, 0.25);
-}
-
-.advanced-section__title {
-  color: #1d3557;
-  font-size: 16px;
-  font-weight: 800;
-  margin-bottom: 12px;
-}
-
-.stage-grid--advanced {
-  grid-template-columns: 1fr;
-}
-
 .stage-button--advanced {
   background: linear-gradient(160deg, #efe3ff 0%, #dcc6ff 100%);
+}
+
+.piano-panel {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
 }
 
 .piano-title {
