@@ -40,7 +40,7 @@ function StagePage() {
   }, [start])
 
   return (
-    <div className="page">
+    <div className="page stage-page">
       <CuteMascots />
       <header className="page-header">
         <Link to="/" className="ghost-button">

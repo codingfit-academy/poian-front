@@ -2,7 +2,7 @@
   position: fixed;
   inset: 0;
   pointer-events: none;
-  z-index: 2;
+  z-index: 0;
 }
 
 .cute-mascot {
@@ -10,15 +10,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 34px;
-  height: 34px;
+  width: 88px;
+  height: 88px;
   border-radius: 50%;
   box-shadow:
-    0 0 0 3px rgba(255, 255, 255, 0.9),
-    0 6px 12px rgba(29, 53, 87, 0.2);
+    0 0 0 3px rgba(255, 255, 255, 0.97),
+    0 0 0 6px rgba(255, 183, 3, 0.4),
+    0 10px 26px rgba(29, 53, 87, 0.35);
   font-size: 16px;
-  transition: left 4.2s ease-in-out, top 4.2s ease-in-out;
-  animation: cute-mascot-bob 3.4s ease-in-out infinite;
 }
 
 .cute-mascot--pink {
@@ -43,31 +42,40 @@
 
 .cute-mascot__ribbon {
   position: absolute;
-  top: -8px;
-  right: -4px;
-  font-size: 10px;
+  top: -10px;
+  right: -6px;
+  font-size: 15px;
   transform: rotate(18deg);
+  filter: drop-shadow(0 2px 3px rgba(29, 53, 87, 0.35));
 }
 
 .cute-mascot__face {
   display: inline-block;
-  transition: transform 0.3s ease-in-out;
 }
 
-@keyframes cute-mascot-bob {
-  0%,
-  100% {
-    transform: translateY(0) rotate(-4deg);
-  }
-  50% {
-    transform: translateY(-10px) rotate(4deg);
-  }
+.cute-mascot__img {
+  display: block;
+  width: 82px;
+  height: 82px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 30%;
+  filter: saturate(1.08) contrast(1.03);
 }
 
 @media (max-width: 720px) {
   .cute-mascot {
-    width: 26px;
-    height: 26px;
+    width: 60px;
+    height: 60px;
     font-size: 13px;
+  }
+
+  .cute-mascot__img {
+    width: 54px;
+    height: 54px;
+  }
+
+  .cute-mascot__ribbon {
+    font-size: 12px;
   }
 }

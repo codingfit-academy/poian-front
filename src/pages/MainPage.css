@@ -1,3 +1,9 @@
+.page.main-page {
+  background:
+    linear-gradient(180deg, rgba(29, 53, 87, 0.28) 0%, rgba(29, 53, 87, 0.12) 40%, rgba(29, 53, 87, 0.32) 100%),
+    url("/images/곰돌이 푸의 마을.webp") center / cover no-repeat fixed;
+}
+
 .main-body {
   position: relative;
   z-index: 1;
@@ -74,6 +80,29 @@
   opacity: 0.8;
 }
 
+.advanced-section {
+  width: 100%;
+  max-width: 380px;
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 2px dashed rgba(29, 53, 87, 0.25);
+}
+
+.advanced-section__title {
+  color: #1d3557;
+  font-size: 16px;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.stage-grid--advanced {
+  grid-template-columns: 1fr;
+}
+
+.stage-button--advanced {
+  background: linear-gradient(160deg, #efe3ff 0%, #dcc6ff 100%);
+}
+
 .piano-title {
   color: #1d3557;
   font-size: 26px;
@@ -87,6 +116,55 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
   padding: 4px;
+}
+
+.glass-panel {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 28px 24px;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  box-shadow:
+    0 20px 45px rgba(29, 53, 87, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+.glass-panel > * {
+  position: relative;
+  z-index: 1;
+}
+
+.glass-panel::before {
+  content: '';
+  position: absolute;
+  z-index: 0;
+  inset: -60%;
+  background: linear-gradient(
+    115deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.55) 50%,
+    transparent 60%
+  );
+  background-size: 200% 200%;
+  animation: glass-sheen 6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes glass-sheen {
+  0% {
+    background-position: -130% -130%;
+  }
+  55%,
+  100% {
+    background-position: 130% 130%;
+  }
 }

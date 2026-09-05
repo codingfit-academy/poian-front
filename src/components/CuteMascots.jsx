@@ -1,63 +1,26 @@
-import { useEffect, useRef, useState } from 'react'
 import './CuteMascots.css'
 
+const POOH_IMAGE = '/images/곰돌이 푸.jpg'
+
 const CHARACTERS = [
-  { id: 'bear-1', emoji: '🐻', tone: 'butter' },
-  { id: 'bear-2', emoji: '🐻', tone: 'pink' },
-  { id: 'piglet-1', emoji: '🐷', tone: 'pink' },
-  { id: 'piglet-2', emoji: '🐷', tone: 'sky' },
-  { id: 'donkey-1', emoji: '🐴', tone: 'lavender' },
-  { id: 'donkey-2', emoji: '🐴', tone: 'mint' },
-  { id: 'rabbit', emoji: '🐰', tone: 'sky' },
-  { id: 'tiger', emoji: '🐯', tone: 'butter' },
+  { id: 'pooh-1', tone: 'butter', x: 4, y: 12 },
+  { id: 'pooh-2', tone: 'sky', x: 92, y: 14 },
+  { id: 'pooh-3', tone: 'pink', x: 5, y: 82 },
+  { id: 'pooh-4', tone: 'mint', x: 90, y: 80 },
 ]
 
-function randomSpot() {
-  return {
-    x: 6 + Math.random() * 80,
-    y: 16 + Math.random() * 64,
-  }
-}
-
 function CuteMascots() {
-  const [spots] = useState(() => CHARACTERS.map(() => randomSpot()))
-  const nodeRefs = useRef([])
-  const faceRefs = useRef([])
-
-  useEffect(() => {
-    const timers = nodeRefs.current.map((node, i) => {
-      if (!node) return null
-      let prevX = spots[i].x
-
-      const wander = () => {
-        const next = randomSpot()
-        const dir = next.x < prevX ? -1 : 1
-        node.style.left = `${next.x}%`
-        node.style.top = `${next.y}%`
-        const face = faceRefs.current[i]
-        if (face) face.style.transform = `scaleX(${dir})`
-        prevX = next.x
-        return setTimeout(wander, 4500 + Math.random() * 3500)
-      }
-
-      return setTimeout(wander, i * 550)
-    })
-
-    return () => timers.forEach((t) => t && clearTimeout(t))
-  }, [spots])
-
   return (
     <div className="cute-mascots" aria-hidden="true">
-      {CHARACTERS.map((c, i) => (
+      {CHARACTERS.map((c) => (
         <span
           key={c.id}
-          ref={(el) => { nodeRefs.current[i] = el }}
           className={`cute-mascot cute-mascot--${c.tone}`}
-          style={{ left: `${spots[i].x}%`, top: `${spots[i].y}%` }}
+          style={{ left: `${c.x}%`, top: `${c.y}%` }}
         >
           <span className="cute-mascot__ribbon">🎀</span>
-          <span className="cute-mascot__face" ref={(el) => { faceRefs.current[i] = el }}>
-            {c.emoji}
+          <span className="cute-mascot__face">
+            <img className="cute-mascot__img" src={POOH_IMAGE} alt="곰돌이 푸" />
           </span>
         </span>
       ))}

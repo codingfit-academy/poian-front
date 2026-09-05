@@ -1,3 +1,9 @@
+.page.stage-page {
+  background:
+    linear-gradient(180deg, rgba(29, 53, 87, 0.28) 0%, rgba(29, 53, 87, 0.12) 40%, rgba(29, 53, 87, 0.32) 100%),
+    url("/images/곰돌이 푸의 마을.webp") center / cover no-repeat fixed;
+}
+
 .stage-page__next {
   margin-left: auto;
 }
